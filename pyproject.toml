@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "virtual-mentor"
+version = "0.1.0"
+description = ""
+authors = ["marc.rullan <marc.rullan@sleepiz.com>"]
+readme = "README.md"
+packages = [{include = "virtual_mentor"}]
+
+[tool.poetry.dependencies]
+python = ">3.9.7,<3.11.0"
+streamlit = "^1.19.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
