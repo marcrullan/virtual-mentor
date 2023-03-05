@@ -9,6 +9,9 @@ packages = [{include = "virtual_mentor"}]
 [tool.poetry.dependencies]
 python = ">3.9.7,<3.11.0"
 streamlit = "^1.19.0"
+openai = "^0.27.0"
+tiktoken = "^0.3.0"
+ipykernel = "^6.21.2"
 
 
 [build-system]
