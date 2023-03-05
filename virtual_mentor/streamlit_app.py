@@ -44,5 +44,5 @@ with st.form(key='my_form'):
     if submitted:
         response = query_model(messages)
         message_cost = compute_message_cost(messages)
-        st.write(f"Message cost: {message_cost}")
+        st.write(f"Message cost: {message_cost * 100}¢")
         st.write(response['choices'][0]['message']['content'])
