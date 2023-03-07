@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import streamlit as st
 import openai
 
@@ -33,8 +35,7 @@ with st.form(key='my_form'):
     context_msg_content = f"You are {historical_character}. Represent yourself in a way that is\
         consistent with your historical reputation."
 
-    question_msg_content = st.text_area(f'Enter your question for {historical_character}',
-                          "What is your opinion on the current political situation?")
+    question_msg_content = st.text_area(f'Enter your question for {historical_character}')
     messages=[
             create_message('system', context_msg_content),
             create_message('user', question_msg_content),
@@ -44,5 +45,6 @@ with st.form(key='my_form'):
     if submitted:
         response = query_model(messages)
         message_cost = compute_message_cost(messages)
+        st.write(f'Your question: {question_msg_content}')
         st.write(f"Message cost: {message_cost * 100}¢")
         st.write(response['choices'][0]['message']['content'])
